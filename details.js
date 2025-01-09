@@ -1,6 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const animeId = urlParams.get("id") || "defaultAnimeId";
-const apiUrl = `https://aniwatch-api-net.vercel.app/api/v2/hianime/anime/${animeId}`;
+const apiUrl = `https://anime-api-drab.vercel.app/api/v2/hianime/anime/${animeId}`;
 
 fetch(apiUrl)
   .then((response) => response.json())
@@ -82,4 +82,3 @@ fetch(apiUrl)
     console.error("Error fetching anime details:", error);
     alert("Failed to fetch anime details. Please try again later.");
   });
-                                
