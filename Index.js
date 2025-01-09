@@ -4,7 +4,7 @@ const sliderContainer = document.getElementById("slider-container");
 // Fetch data from the API
 async function fetchAnimes() {
     try {
-        const response = await fetch('https://aniwatch-api-net.vercel.app/api/v2/hianime/home'); 
+        const response = await fetch('https://anime-api-drab.vercel.app/api/v2/hianime/home'); 
         const data = await response.json();
         if (data.success) {
             const spotlightAnimes = data.data.spotlightAnimes;
@@ -43,10 +43,9 @@ async function fetchAnimes() {
                 watchButton.textContent = "Watch Now";
 
                 const detailsButton = document.createElement("a");
-detailsButton.href = `details.html?id=${anime.id}`; 
-detailsButton.classList.add("details-button");
-detailsButton.textContent = "Details";
-
+                detailsButton.href = `details.html?id=${anime.id}`; 
+                detailsButton.classList.add("details-button");
+                detailsButton.textContent = "Details";
 
                 // Append all elements
                 buttons.appendChild(watchButton);
